@@ -81,3 +81,78 @@ function aggiornaSticky() {
 }
 
 window.addEventListener('scroll', aggiornaSticky);
+
+/*==================================
+             NEW PHOTOS
+===================================*/
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Usiamo l'ID specifico
+    const btn = document.getElementById('load-more-photos');
+    const targetList = document.querySelector('.media-more');
+
+    if(btn) { // Controllo di sicurezza: esegui solo se il tasto esiste nella pagina
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            // Mostra la griglia
+            targetList.classList.add('is-visible');
+
+            // Nasconde tutto il contenitore del tasto (linea e triangolo inclusi)
+            this.closest('.show-more-wrapper').style.display = 'none';
+        });
+    }
+});
+
+/*==================================
+             SLIDESHOW
+===================================*/
+
+document.addEventListener('DOMContentLoaded', function() {
+    const track = document.querySelector('.events-track');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    if (track && prevBtn && nextBtn) {
+        // Calcoliamo quanto scorrere: la larghezza di una card + il gap
+        // Usiamo una funzione per ricalcolarlo se la finestra viene ridimensionata
+        const getScrollAmount = () => {
+            const card = track.querySelector('.event-card');
+            const style = window.getComputedStyle(track);
+            const gap = parseInt(style.columnGap) || 15;
+            return card ? card.offsetWidth + gap : 200;
+        };
+
+        // Bottone Avanti
+        nextBtn.addEventListener('click', () => {
+            track.scrollBy({
+                left: getScrollAmount(),
+                behavior: 'smooth'
+            });
+        });
+
+        // Bottone Indietro
+        prevBtn.addEventListener('click', () => {
+            track.scrollBy({
+                left: -getScrollAmount(),
+                behavior: 'smooth'
+            });
+        });
+
+        // Opzionale: Nascondere le frecce se non c'è più nulla da scorrere
+        track.addEventListener('scroll', () => {
+            const maxScrollLeft = track.scrollWidth - track.clientWidth;
+
+            // Nascondi "indietro" se siamo all'inizio
+            prevBtn.style.opacity = track.scrollLeft <= 0 ? "0.3" : "1";
+            prevBtn.style.pointerEvents = track.scrollLeft <= 0 ? "none" : "auto";
+
+            // Nascondi "avanti" se siamo alla fine
+            nextBtn.style.opacity = track.scrollLeft >= maxScrollLeft - 1 ? "0.3" : "1";
+            nextBtn.style.pointerEvents = track.scrollLeft >= maxScrollLeft - 1 ? "none" : "auto";
+        });
+
+        // Eseguiamo il controllo iniziale per la freccia "prev"
+        track.dispatchEvent(new Event('scroll'));
+    }
+});

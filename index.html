@@ -12,24 +12,6 @@
 </head>
 
 <body>
-<!--
-<div id="side-menu-overlay" class="overlay"></div>
-<nav id="side-menu" class="side-nav">
-    <div class="menu-header">
-        <button id="close-menu">✕ Close</button>
-    </div>
-    <ul>
-        <li><a href="#">Home Page</a></li>
-        <li><a href="#">News</a></li>
-        <li><a href="#">Local</a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-    </ul>
-</nav>
--->
 <div id="side-menu-overlay"></div>
 
 <div class="wrapper pushnav-left">
@@ -511,8 +493,42 @@
             </div>
 
             <div class="show-more-wrapper">
-                <a href="#" class="show-more-btn">Show More Photos</a>
+                <a href="#" class="show-more-btn" id="load-more-photos">Show More Photos</a>
             </div>
+
+            <ul class="media-more">
+                <li class="media-item">
+                    <a href="#">
+                        <img src="img/imgplaceholder.svg" alt="">
+                        <span class="media-title">Photos: High-energy start for Bay Area Dance Week</span>
+                    </a>
+                </li>
+                <li class="media-item">
+                    <a href="#">
+                        <img src="img/imgplaceholder.svg" alt="">
+                        <span class="media-title">Apple at 50: How Cupertino's tech giant changed what technology feels like</span>
+                    </a>
+                </li>
+                <li class="media-item">
+                    <a href="#">
+                        <img src="img/imgplaceholder.svg" alt="">
+                        <span class="media-title">Photos: High-energy start for Bay Area Dance Week</span>
+                    </a>
+                </li>
+                <li class="media-item">
+                    <a href="#">
+                        <img src="img/imgplaceholder.svg" alt="">
+                        <span class="media-title">Apple at 50: How Cupertino's tech giant changed what technology feels like</span>
+                    </a>
+                </li>
+                <li class="media-item">
+                    <a href="#">
+                        <img src="img/imgplaceholder.svg" alt="">
+                        <span class="media-title">Apple at 50: How Cupertino's tech giant changed what technology feels like</span>
+                    </a>
+                </li>
+            </ul>
+
         </div>
 
         <!-- Sidebar AD -->
@@ -520,7 +536,184 @@
             <div id="side-ad-lower" class="ad-placeholder-gray"></div>
         </aside>
     </section>
+
+    <section class="upcoming-events">
+        <div class="events-container">
+            <!-- Header con tasti social/azioni -->
+            <div class="events-header">
+                <h2>Upcoming Events</h2>
+                <div class="events-actions">
+                    <a href="#"><i class="calendar-icon"></i> See All Events</a>
+                    <a href="#">+ Add your event</a>
+                </div>
+            </div>
+
+            <!-- Slideshow Area -->
+            <div class="events-slider-wrapper">
+
+                <button class="prev-btn">&#10094;</button>
+                <button class="next-btn">&#10095;</button>
+                <div class="events-track">
+                    <!-- Esempio di una card evento -->
+                    <article class="event-card">
+                        <div class="event-img-wrap">
+                            <span class="event-date-tag">Fri, May 08</span>
+                            <img src="img/imgplaceholder.svg" alt="" width="150px">
+                        </div>
+                        <h4>Street Encounters</h4>
+                        <p>2727 Community Art...</p>
+                    </article>
+                    <article class="event-card">
+                        <div class="event-img-wrap">
+                            <span class="event-date-tag">Fri, May 08</span>
+                            <img src="img/imgplaceholder.svg" alt="" width="150">
+                        </div>
+                        <h4>Street Encounters</h4>
+                        <p>2727 Community Art...</p>
+                    </article>
+                    <article class="event-card">
+                        <div class="event-img-wrap">
+                            <span class="event-date-tag">Fri, May 08</span>
+                            <img src="img/imgplaceholder.svg" alt="" width="150">
+                        </div>
+                        <h4>Street Encounters</h4>
+                        <p>2727 Community Art...</p>
+                    </article>
+                    <article class="event-card">
+                        <div class="event-img-wrap">
+                            <span class="event-date-tag">Fri, May 08</span>
+                            <img src="img/imgplaceholder.svg" alt="" width="150">
+                        </div>
+                        <h4>Street Encounters</h4>
+                        <p>2727 Community Art...</p>
+                    </article>
+                    <article class="event-card">
+                        <div class="event-img-wrap">
+                            <span class="event-date-tag">Fri, May 08</span>
+                            <img src="img/imgplaceholder.svg" alt="" width="150">
+                        </div>
+                        <h4>Street Encounters</h4>
+                        <p>2727 Community Art...</p>
+                    </article>
+                    <article class="event-card">
+                        <div class="event-img-wrap">
+                            <span class="event-date-tag">Fri, May 08</span>
+                            <img src="img/imgplaceholder.svg" alt="" width="150">
+                        </div>
+                        <h4>Street Encounters</h4>
+                        <p>2727 Community Art...</p>
+                    </article>
+                    <article class="event-card">
+                        <div class="event-img-wrap">
+                            <span class="event-date-tag">Fri, May 08</span>
+                            <img src="img/imgplaceholder.svg" alt="" width="150">
+                        </div>
+                        <h4>Street Encounters</h4>
+                        <p>2727 Community Art...</p>
+                    </article>
+                    <!-- Aggiungi le altre card... -->
+                </div>
+
+            </div>
+
+            <!-- Barra del Calendario -->
+            <div class="calendar-strip">
+                <div class="calendar-icon-wrap"><i class="big-cal-icon"></i></div>
+                <div class="days-wrapper">
+                    <div class="day-item"><a href="#" class="day-link"><span>FRI</span><strong>1</strong></a></div>
+                    <div class="day-item"><a href="#" class="day-link"><span>SAT</span><strong>2</strong></a></div>
+                    <div class="day-item"><a href="#" class="day-link"><span>SUN</span><strong>3</strong></a></div>
+                    <div class="day-item"><a href="#" class="day-link"><span>MON</span><strong>4</strong></a></div>
+                    <div class="day-item"><a href="#" class="day-link"><span>TUE</span><strong>5</strong></a></div>
+                    <div class="day-item"><a href="#" class="day-link"><span>WED</span><strong>6</strong></a></div>
+                    <div class="day-item"><a href="#" class="day-link"><span>THU</span><strong>7</strong></a></div>
+                    <div class="day-item"><a href="#" class="day-link"><span>FRI</span><strong>8</strong></a></div>
+                    <div class="day-item"><a href="#" class="day-link"><span>SAT</span><strong>9</strong></a></div>
+                    <div class="day-item"><a href="#" class="day-link"><span>SUN</span><strong>10</strong></a></div>
+                    <div class="day-item"><a href="#" class="day-link"><span>MON</span><strong>11</strong></a></div>
+                    <div class="day-item"><a href="#" class="day-link"><span>TUE</span><strong>12</strong></a></div>
+                    <div class="day-item"><a href="#" class="day-link"><span>WED</span><strong>13</strong></a></div>
+                    <div class="day-item"><a href="#" class="day-link"><span>THU</span><strong>14</strong></a></div>
+                    <div class="day-item"><a href="#" class="day-link"><span>FRI</span><strong>15</strong></a></div>
+                    <div class="day-item"><a href="#" class="day-link"><span>SAT</span><strong>16</strong></a></div>
+                    <div class="day-item"><a href="#" class="day-link"><span>SUN</span><strong>17</strong></a></div>
+                    <div class="day-item"><a href="#" class="day-link"><span>MON</span><strong>18</strong></a></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar AD laterale -->
+        <aside class="sidebar-ad-container">
+            <div id="side-ad-events" class="ad-placeholder-gray"></div>
+        </aside>
+    </section>
 </div>
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <!-- Colonna 1: Logo e News/Marketplace -->
+        <div class="footer-col col-brand">
+            <img src="logo-black.png" alt="The Mercury News" class="footer-logo">
+            <div class="footer-section">
+                <h3>NEWS ALERTS</h3>
+                <ul>
+                    <li><a href="#">Email Newsletters</a></li>
+                    <li><a href="#">Today’s e-Edition</a></li>
+                    <li><a href="#">Mobile Apps</a></li>
+                    <li><a href="#">Site Map</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>MARKETPLACE</h3>
+                <ul>
+                    <li><a href="#">Place an Obituary</a></li>
+                    <li><a href="#">Place a Real Estate Ad</a></li>
+                    <li><a href="#">Lottery</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Colonna 2 & 3: Contact & Advertise (Si fondono a 1040px) -->
+        <div class="footer-col-group">
+            <div class="footer-section">
+                <h3>CONTACT US</h3>
+                <ul>
+                    <li><a href="#">Digital Access FAQ</a></li>
+                    <li><a href="#">Join our Team</a></li>
+                    <li><a href="#">Special Sections</a></li>
+                    <li><a href="#">Sponsor a Group</a></li>
+                    <li><a href="#">Get Sponsored Access</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>ADVERTISE WITH US</h3>
+                <ul>
+                    <li><a href="#">Network Advertising</a></li>
+                    <li><a href="#">Daily Ads</a></li>
+                    <li><a href="#">Place a Legal Notice</a></li>
+                    <li><a href="#">Public Notices</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Colonna 4: Subscribe -->
+        <div class="footer-col col-subscribe">
+            <div class="footer-section">
+                <h3>SUBSCRIBE</h3>
+                <ul>
+                    <li><a href="#">Member Services</a></li>
+                    <li><a href="#">Manage Subscriptions</a></li>
+                    <li><a href="#">The Mercury News Store</a></li>
+                    <li><a href="#">Archive Search</a></li>
+                    <li><a href="#">Reprints</a></li>
+                </ul>
+                <a href="#" class="btn-subscribe">SUBSCRIBE NOW</a>
+            </div>
+        </div>
+    </div>
+</footer>
 <script src="js/app.js"></script>
 </body>
 </html>

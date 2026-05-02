@@ -876,14 +876,12 @@ body.menu-open {
   border-bottom: 2px solid #007398;
   padding-bottom: 5px;
   margin-bottom: 15px;
-
 }
 
 .cat-title a {
   font-size: 20px;
   font-weight: 400;
   color: #353535;
-  text-decoration: none;
   text-transform: uppercase;
   display: flex;
   align-items: center;
@@ -906,7 +904,6 @@ body.menu-open {
   font-size: 18px;
   font-weight: 600;
   color: #000;
-  text-decoration: underline;
   line-height: 1.2;
 }
 
@@ -935,7 +932,6 @@ body.menu-open {
   font-size: 14px;
   font-weight: 700;
   color: #000;
-  text-decoration: underline;
   line-height: 1.3;
   display: block;
 }
@@ -978,6 +974,25 @@ body.menu-open {
   flex: 0 0 60%;
 }
 
+.photo-main h4 {
+  margin: 15px 0 8px 0;
+}
+
+.photo-main h4 a {
+  font-family: 'Noto Serif', serif;
+  font-size: 24px; /* Più grande degli altri */
+  font-weight: 900;
+  color: #000;
+  text-decoration: underline;
+  line-height: 1.1;
+}
+
+.photo-main p {
+  font-size: 13px;
+  color: #666; /* Grigio leggermente più chiaro per il sommario */
+  line-height: 1.4;
+}
+
 .photo-thumbs-list {
   flex: 1;
   display: flex;
@@ -1001,12 +1016,335 @@ body.menu-open {
 }
 
 .thumb-item a {
-  font-family: 'Arial', sans-serif;
   font-size: 13px;
   font-weight: bold;
   color: #000;
   line-height: 1.2;
 }
+
+.photos-module a:hover {
+  color: #007398 !important;
+}
+
+.show-more-btn:hover {
+  color: #004b63; /* Un blu più scuro */
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.media-more {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+  /* 4 colonne di default per desktop */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.media-more.is-visible {
+  display: grid; /* Torna a essere una griglia quando clicchi */
+}
+
+.media-item a {
+  text-decoration: underline;
+  color:  #000000;
+  display: block;
+}
+
+.media-item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2; /* Mantiene le foto uniformi */
+  object-fit: cover;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.media-title {
+  font-family: 'Noto Serif', serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #000;
+  line-height: 1.3;
+  transition: color 0.2s ease;
+}
+
+/* Effetto Hover: il testo diventa blu */
+.media-item a:hover .media-title {
+  color: #007398;
+}
+
+/*================================
+         CALENDAR
+================================*/
+
+.upcoming-events {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.events-container { flex: 1; min-width: 0; }
+
+.events-header {
+  display: flex;
+  justify-content: space-between; /* Spinge il titolo a sinistra e i link a destra */
+  align-items: baseline;        /* Allinea le basi del testo per un look professionale */
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee; /* Linea sottile di separazione */
+}
+
+.events-header h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 20px;
+  font-weight: 400; /* Non troppo grassetto, come da screen */
+  color: #333;
+  margin: 0;
+}
+
+.events-actions {
+  display: flex;
+  gap: 20px; /* Spazio tra i due link */
+}
+
+.events-actions a {
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Spazio tra icona e testo */
+  transition: color 0.2s;
+}
+
+/* Slideshow */
+
+.events-slider-wrapper {
+  position: relative; /* Necessario per ancorare le frecce */
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.events-track {
+  display: flex;
+  gap: 15px;
+  overflow: hidden; /* Fondamentale per lo slider */
+  width: 100%;
+}
+
+.event-card {
+  flex: 0 0 calc(16.66% - 13px); /* 6 card visibili su desktop */
+  min-width: 140px;
+}
+
+.event-card h4{
+  font-size: 14px;
+  margin: 0;
+}
+
+.event-card p{
+  font-size: 12px;
+  margin: 0;
+}
+
+.event-img-wrap{
+  max-height: 150px;
+}
+
+.event-img-wrap span{
+  font-size: 11px;
+}
+
+.event-img-wrap img{
+  object-fit: cover;
+}
+
+/* Stile comune per i bottoni/frecce */
+.prev-btn, .next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* Centra perfettamente la freccia in verticale */
+  z-index: 10;
+  border: 0;
+  border-radius: 4px;
+  background-color: rgba(10, 9, 8, 0);
+  width: 35px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+/* Posiziona la freccia sinistra */
+.prev-btn {
+  left: -15px; /* La facciamo sporgere leggermente a sinistra */
+}
+
+/* Posiziona la freccia destra */
+.next-btn {
+  right: -15px; /* La facciamo sporgere leggermente a destra */
+}
+
+.events-track {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto; /* Permette anche lo swipe su mobile */
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Nasconde la barra su Firefox */
+  -ms-overflow-style: none; /* Nasconde la barra su IE/Edge */
+}
+
+.events-track::-webkit-scrollbar {
+  display: none; /* Nasconde la barra su Chrome/Safari */
+}
+
+/* --- LA BARRA DEL CALENDARIO --- */
+.calendar-strip {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+  margin-top: 25px;
+  height: 50px;
+  overflow: hidden;
+}
+
+.days-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  height: 50px;
+  align-content: flex-start;
+}
+
+
+
+.day-item {
+  flex: 0 0 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+
+.day-link {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   height: 100%;
+   text-decoration: none; /* Rimuove la sottolineatura standard */
+   transition: background-color 0.2s ease;
+ }
+
+.day-item span {
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  color: #4e4e4e;
+  line-height: 1;
+  margin-bottom: 4px; /* Spazio tra TUE e 1 */
+}
+
+.day-item strong {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  color: #4e4e4e;
+  line-height: 1;
+}
+
+/*================================
+            FOOTER
+================================*/
+
+.main-footer {
+  background-color: #f5f5f5;
+  padding: 40px 20px;
+  border-top: 1px solid #ddd;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-col, .footer-col-group {
+  flex: 1;
+}
+
+/* Gestione delle due colonne centrali in desktop */
+.footer-col-group {
+  display: flex;
+  gap: 30px;
+  flex: 2; /* Occupa lo spazio di due colonne */
+}
+
+.footer-section {
+  margin-bottom: 30px;
+}
+
+.footer-logo {
+  width: 200px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+/* Titoli con linea nera sopra */
+.footer-section h3 {
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  border-top: 2px solid #333;
+  padding-top: 10px;
+  margin-bottom: 15px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin-bottom: 8px;
+}
+
+.footer-section a {
+  text-decoration: none;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+/* Bottone Subscribe Blu */
+.btn-subscribe {
+  display: block;
+  background-color: #007398;
+  color: #fff !important;
+  text-align: center;
+  padding: 12px;
+  font-weight: bold;
+  border-radius: 4px;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+/*================================
+       GESTIONE DIMENSIONE
+================================*/
 
 @media (max-width: 1000px) {
   .mid-page-ad {
@@ -1180,6 +1518,15 @@ body.menu-open {
     grid-template-columns: 1fr 1fr; /* Griglia 2x2 come in foto */
     gap: 20px;
   }
+
+  .media-more {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-col-group {
+    flex-direction: column;
+    flex: 1; /* Torna a occupare lo spazio di una colonna singola */
+  }
 }
 
 @media (max-width: 800px) {
@@ -1282,6 +1629,28 @@ body.menu-open {
     flex: 0 0 100%;
     max-width: 100%;
   }
+
+  .media-more {
+    /* Nello screenshot 2 si vedono 2 colonne molto grandi */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .media-title {
+    font-size: 16px; /* Testo leggermente più grande per mobile */
+  }
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .footer-col-group {
+    flex-direction: row; /* In griglia a 2, queste possono stare affiancate o impilate */
+    gap: 20px;
+  }
+
 }
 
 
@@ -1346,4 +1715,5 @@ body.menu-open {
   .photo-thumbs-list {
     grid-template-columns: 1fr; /* Una miniatura per riga su mobile */
   }
+
 }
