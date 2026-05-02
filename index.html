@@ -533,7 +533,7 @@
 
         <!-- Sidebar AD -->
         <aside class="sidebar-ad-container">
-            <div id="side-ad-lower" class="ad-placeholder-gray"></div>
+            <div id="side-ad-lower" class="ad-placeholder-gray">ADVERTISEMENT</div>
         </aside>
     </section>
 
@@ -644,38 +644,41 @@
 
         <!-- Sidebar AD laterale -->
         <aside class="sidebar-ad-container">
-            <div id="side-ad-events" class="ad-placeholder-gray"></div>
+            <div id="side-ad-events" class="ad-placeholder-gray"><p>ADVERTISEMENT</p></div>
         </aside>
     </section>
 </div>
 
-<footer class="main-footer">
-    <div class="footer-container">
-        <!-- Colonna 1: Logo e News/Marketplace -->
-        <div class="footer-col col-brand">
-            <img src="logo-black.png" alt="The Mercury News" class="footer-logo">
-            <div class="footer-section">
-                <h3>NEWS ALERTS</h3>
-                <ul>
-                    <li><a href="#">Email Newsletters</a></li>
-                    <li><a href="#">Today’s e-Edition</a></li>
-                    <li><a href="#">Mobile Apps</a></li>
-                    <li><a href="#">Site Map</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>MARKETPLACE</h3>
-                <ul>
-                    <li><a href="#">Place an Obituary</a></li>
-                    <li><a href="#">Place a Real Estate Ad</a></li>
-                    <li><a href="#">Lottery</a></li>
-                </ul>
-            </div>
+<footer class="site-footer">
+    <div class="main-footer-wrapper">
+        <div class="footer-logo">
+            <img src="img/mn-logo.svg" alt="Mercury News" width="300px">
         </div>
 
-        <!-- Colonna 2 & 3: Contact & Advertise (Si fondono a 1040px) -->
-        <div class="footer-col-group">
-            <div class="footer-section">
+        <ul id="footer-menu" class="footer-menus">
+            <!-- Colonna 1: News Alerts & Marketplace -->
+            <li class="menu-item-has-children item-news">
+                <div class="sub-column">
+                    <h3>NEWS ALERTS</h3>
+                    <ul>
+                        <li><a href="#">Email Newsletters</a></li>
+                        <li><a href="#">Today’s e-Edition</a></li>
+                        <li><a href="#">Mobile Apps</a></li>
+                        <li><a href="#">Site Map</a></li>
+                    </ul>
+                </div>
+                <div class="sub-column">
+                    <h3>MARKETPLACE</h3>
+                    <ul>
+                        <li><a href="#">Place an Obituary</a></li>
+                        <li><a href="#">Place a Real Estate Ad</a></li>
+                        <li><a href="#">Lottery</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <!-- Colonna 2: Contact Us -->
+            <li class="menu-item-has-children item-contact">
                 <h3>CONTACT US</h3>
                 <ul>
                     <li><a href="#">Digital Access FAQ</a></li>
@@ -686,8 +689,10 @@
                     <li><a href="#">Privacy Policy</a></li>
                     <li><a href="#">Accessibility</a></li>
                 </ul>
-            </div>
-            <div class="footer-section">
+            </li>
+
+            <!-- Colonna 3: Advertise -->
+            <li class="menu-item-has-children item-advertise">
                 <h3>ADVERTISE WITH US</h3>
                 <ul>
                     <li><a href="#">Network Advertising</a></li>
@@ -695,12 +700,10 @@
                     <li><a href="#">Place a Legal Notice</a></li>
                     <li><a href="#">Public Notices</a></li>
                 </ul>
-            </div>
-        </div>
+            </li>
 
-        <!-- Colonna 4: Subscribe -->
-        <div class="footer-col col-subscribe">
-            <div class="footer-section">
+            <!-- Colonna 4: Subscribe -->
+            <li class="menu-item-has-children item-subscribe">
                 <h3>SUBSCRIBE</h3>
                 <ul>
                     <li><a href="#">Member Services</a></li>
@@ -710,10 +713,11 @@
                     <li><a href="#">Reprints</a></li>
                 </ul>
                 <a href="#" class="btn-subscribe">SUBSCRIBE NOW</a>
-            </div>
-        </div>
+            </li>
+        </ul>
     </div>
 </footer>
+
 <script src="js/app.js"></script>
 </body>
 </html>

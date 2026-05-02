@@ -215,7 +215,8 @@ nav a {
   align-items: center;       /* Allinea verticalmente al centro */
   justify-content: center;
   height: 64px;/* Spaziatura interna */
-  border-bottom: 1px solid #0a0908;
+  border-bottom: 1px solid #9c9c9c;
+  box-shadow: 0 4px 2px -2px rgba(0,0,0,0.25);
 }
 
 
@@ -429,6 +430,8 @@ body.menu-open {
     justify-content: space-between;
     align-items: center;
     padding: 0 15px;
+    border-bottom: 1px solid #9c9c9c;
+    box-shadow: 0 4px 2px -2px rgba(0,0,0,0.25);
   }
   /* Spazio per non far finire il sito sotto l'header fisso */
   body {
@@ -509,6 +512,7 @@ body.menu-open {
 
 
 
+
 .main-content {
   max-width: 1300px; /* Corrisponde a 81.25em */
   margin-left: auto;
@@ -522,13 +526,11 @@ body.menu-open {
   /* 3. Margini Verticali */
   /* Lo screenshot mostra margin-top: 0 e un leggero margin-bottom */
   margin-top: 16px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 80px;
 
   /* 4. Fondamentale per il calcolo corretto delle larghezze */
   box-sizing: border-box;
 
-  /* Per vedere il box mentre lavori (opzionale) */
-  /* background-color: #f9f9f9; */
 }
 
 .marketing-bar {
@@ -550,6 +552,8 @@ body.menu-open {
   box-sizing: border-box;
   background-color: #0089a1;
   color: white;
+
+
 }
 
 /* Gestione visibilità */
@@ -1075,6 +1079,17 @@ body.menu-open {
   color: #007398;
 }
 
+.sidebar-ad-container {
+  flex: 0 0 300px; /* Mantiene la larghezza fissa di 300px */
+  background-color: #f0f0f0; /* Un grigio chiaro neutro */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;       /* Altezza minima tipica di un box AD */
+  position: relative;
+}
+
+
 /*================================
          CALENDAR
 ================================*/
@@ -1138,6 +1153,11 @@ body.menu-open {
 .event-card {
   flex: 0 0 calc(16.66% - 13px); /* 6 card visibili su desktop */
   min-width: 140px;
+}
+
+.event-date-tag{
+  background-color: #4e4e4e;
+  color: white;
 }
 
 .event-card h4{
@@ -1258,88 +1278,6 @@ body.menu-open {
   font-size: 18px;
   color: #4e4e4e;
   line-height: 1;
-}
-
-/*================================
-            FOOTER
-================================*/
-
-.main-footer {
-  background-color: #f5f5f5;
-  padding: 40px 20px;
-  border-top: 1px solid #ddd;
-}
-
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
-}
-
-.footer-col, .footer-col-group {
-  flex: 1;
-}
-
-/* Gestione delle due colonne centrali in desktop */
-.footer-col-group {
-  display: flex;
-  gap: 30px;
-  flex: 2; /* Occupa lo spazio di due colonne */
-}
-
-.footer-section {
-  margin-bottom: 30px;
-}
-
-.footer-logo {
-  width: 200px;
-  margin-bottom: 20px;
-  display: block;
-}
-
-/* Titoli con linea nera sopra */
-.footer-section h3 {
-  font-family: 'Arial', sans-serif;
-  font-size: 14px;
-  font-weight: bold;
-  border-top: 2px solid #333;
-  padding-top: 10px;
-  margin-bottom: 15px;
-}
-
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-section li {
-  margin-bottom: 8px;
-}
-
-.footer-section a {
-  text-decoration: none;
-  color: #333;
-  font-family: 'Arial', sans-serif;
-  font-size: 14px;
-}
-
-.footer-section a:hover {
-  text-decoration: underline;
-}
-
-/* Bottone Subscribe Blu */
-.btn-subscribe {
-  display: block;
-  background-color: #007398;
-  color: #fff !important;
-  text-align: center;
-  padding: 12px;
-  font-weight: bold;
-  border-radius: 4px;
-  margin-top: 20px;
-  text-transform: uppercase;
 }
 
 /*================================
@@ -1523,10 +1461,6 @@ body.menu-open {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .footer-col-group {
-    flex-direction: column;
-    flex: 1; /* Torna a occupare lo spazio di una colonna singola */
-  }
 }
 
 @media (max-width: 800px) {
@@ -1640,17 +1574,6 @@ body.menu-open {
     font-size: 16px; /* Testo leggermente più grande per mobile */
   }
 
-  .footer-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-  }
-
-  .footer-col-group {
-    flex-direction: row; /* In griglia a 2, queste possono stare affiancate o impilate */
-    gap: 20px;
-  }
-
 }
 
 
@@ -1716,4 +1639,145 @@ body.menu-open {
     grid-template-columns: 1fr; /* Una miniatura per riga su mobile */
   }
 
+
 }
+/*================================
+            FOOTER
+================================*/
+
+/* 1. Contenitore principale */
+.site-footer {
+  background-color: #f5f5f5; /* Grigio chiarissimo tipico del Mercury News */
+  padding: 40px 0;
+  border-top: 1px solid #ddd;
+  color: #333;
+
+  box-shadow: inset 0 4px 0 rgba(0, 0, 0, 0.05);/* Leggera ombra interna per profondità */
+}
+
+.main-footer-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 2. Logo in alto a sinistra */
+.footer-logo {
+  margin-bottom: 25px;
+  display: flex;
+}
+
+.footer-logo img {
+  height: 35px; /* Dimensione indicativa del logo */
+  width: auto;
+}
+
+/* 3. Gestione Liste (Menu) */
+.footer-menus {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+/* Rimuoviamo i pallini da tutte le liste annidate */
+.footer-menus ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 4. Tipografia e Titoli (h3) */
+.footer-menus h3 {
+  font-size: 16px;
+  font-weight: 900; /* Molto marcato */
+  color: #000;
+  text-transform: uppercase;
+  border-top: 2px solid #333; /* La linea nera spessa sopra ogni sezione */
+  padding-top: 8px;
+  margin-bottom: 12px;
+}
+
+/* 5. Link del footer */
+.footer-menus a {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6; /* Più spazio tra le righe per leggibilità */
+  display: block;
+}
+
+
+/* 6. Il tasto SUBSCRIBE NOW */
+.btn-subscribe {
+  background-color: #007398;
+  color: #fff !important; /* Forza il bianco anche sull'hover */
+  text-align: center;
+  padding: 12px 10px;
+  font-weight: bold;
+  border-radius: 4px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-size: 16px;
+  display: block;
+}
+
+.btn-subscribe:hover {
+  background-color: #005b7a;
+  text-decoration: none !important;
+}
+
+/* 7. Sottosezioni (Marketplace sotto News) */
+.sub-column {
+  margin-bottom: 30px;
+}
+
+/* --- STEP 2: Sotto i 1040px (Foto 2) --- */
+@media (max-width: 1040px) {
+  .footer-menus {
+    /* Passiamo a 3 colonne */
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* La colonna Contact (2) e Advertise (3) devono stare sotto la 1 */
+  /* Ma per farlo con Grid, diciamo alla prima colonna di occupare 2 righe */
+  .item-news {
+    grid-row: span 2;
+  }
+
+  /* Spostiamo Advertise (la 3) sotto Contact (la 2) nella stessa colonna centrale */
+  .item-contact { grid-column: 2; grid-row: 1; }
+  .item-advertise { grid-column: 2; grid-row: 2; }
+
+  /* Subscribe (la 4) resta a destra ma si allinea alla colonna 3 */
+  .item-subscribe { grid-column: 3; grid-row: 1 / span 2; }
+}
+
+/* --- STEP 3: Sotto gli 800px (Foto 3) --- */
+@media (max-width: 800px) {
+  .footer-menus {
+    /* Passiamo a 2 colonne nette */
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Reset posizioni per griglia a 2 */
+  .item-news { grid-column: 1; grid-row: 1; }
+  .item-contact { grid-column: 1; grid-row: 2; }
+  .item-advertise { grid-column: 1; grid-row: 3; }
+
+  /* Subscribe occupa tutta la colonna di destra */
+  .item-subscribe { grid-column: 2; grid-row: 1 / span 3; }
+}
+
+.btn-subscribe {
+  display: block;
+  background-color: #007398;
+  color: #fff !important;
+  text-align: center;
+  padding: 12px;
+  font-weight: bold;
+  border-radius: 3px;
+  margin: 15px;
+}
+
