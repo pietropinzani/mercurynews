@@ -1,49 +1,80 @@
 
-/*==================================
-             STICKY MENU
-===================================*/
+const body = document.body;
+const overlay = document.getElementById('side-menu-overlay');
 const stickyHeader = document.getElementById('sticky-header');
+const mainHeader = document.getElementById('main-header');
+const accountMenu = document.getElementById('account-menu');
+const loginBtn = document.querySelector('.login-button');
 
 
-window.addEventListener('scroll', function() {
-    const stickyHeader = document.getElementById('sticky-header');
-    const mainHeader = document.getElementById('main-header');
-
-    if (sideMenu.classList.contains('open')) return;
-    if (window.scrollY > 65) {
-        stickyHeader.classList.add('is-sticky');
-        mainHeader.classList.add('header-hidden'); // Nasconde l'header grande
-    } else {
-        stickyHeader.classList.remove('is-sticky');
-        mainHeader.classList.remove ('header-hidden'); // Mostra l'header grande
+function chiudiTutto() {
+    
+    if (sideMenu) {
+        sideMenu.classList.remove('open');
+        sideMenu.style.left = "-300px";
     }
+
+    
+    if (searchBar) {
+        searchBar.classList.remove('show');
+    }
+
+    
+    if (accountMenu) {
+        accountMenu.classList.remove('open');
+    }
+
+    
+    overlay.style.display = "none";
+    body.classList.remove('menu-open');
+
+    
+    aggiornaSticky();
+}
+
+
+overlay.addEventListener('click', chiudiTutto);
+
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") chiudiTutto();
 });
 
-/*==================================
-             SIDEBAR
-===================================*/
+function aggiornaSticky() {
+    
+    if (sideMenu.classList.contains('open') || searchBar.classList.contains('show')) {
+        stickyHeader.classList.add('is-sticky');
+        stickyHeader.style.display = 'flex';
+        mainHeader.classList.add('header-hidden');
+        return;
+    }
 
-// Selezioniamo gli elementi
+    if (window.scrollY > 65) {
+        stickyHeader.classList.add('is-sticky');
+        stickyHeader.style.display = 'flex';
+        mainHeader.classList.add('header-hidden');
+    } else {
+        stickyHeader.classList.remove('is-sticky');
+        stickyHeader.style.display = 'none';
+        mainHeader.classList.remove('header-hidden');
+    }
+}
+
+window.addEventListener('scroll', aggiornaSticky);
+
 const sideMenu = document.querySelector('.wrapper.pushnav-left');
-const overlay = document.getElementById('side-menu-overlay');
-const body = document.body;
-// Selezioniamo TUTTI i tasti "All Sections" (sia Main che Sticky)
-// Assicurati che i tuoi tasti abbiano una classe comune, ad esempio .btn-section
 const sectionButtons = document.querySelectorAll('.btn-section, .icon-hamburger');
 
 function toggleMenu() {
     const isOpen = sideMenu.classList.contains('open');
 
     if (isOpen) {
-        // CHIUDI
-        sideMenu.classList.remove('open');
-        sideMenu.style.left = "-300px"; // O il valore della larghezza del tuo menu
-        overlay.style.display = "none";
-        body.classList.remove('menu-open');
-        aggiornaSticky();
-
+        chiudiTutto();
     } else {
-        // APRI
+        
+        chiudiTutto();
+
+        
         sideMenu.classList.add('open');
         sideMenu.style.left = "0";
         overlay.style.display = "block";
@@ -52,61 +83,82 @@ function toggleMenu() {
     }
 }
 
-// Colleghiamo la funzione a tutti i tasti Section
 sectionButtons.forEach(button => {
     button.addEventListener('click', (e) => {
-        e.preventDefault(); // Impedisce scatti della pagina
+        e.preventDefault();
         toggleMenu();
     });
 });
 
-// Chiudi il menu se l'utente clicca fuori (sull'overlay)
-overlay.addEventListener('click', toggleMenu);
 
-function aggiornaSticky() {
-    const stickyHeader = document.getElementById('sticky-header');
+const searchBar = document.getElementById('search-bar');
+const searchInput = document.getElementById('search-input');
+const searchButtons = document.querySelectorAll('.search-button');
+searchButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
 
-    // Se il menu è aperto, lo sticky DEVE essere visibile
-    if (sideMenu.classList.contains('open')) {
-        stickyHeader.style.display = 'flex';
-        return;
-    }
+        if (searchBar.classList.contains('show')) {
+            chiudiTutto();
+        } else {
+            
+            chiudiTutto();
+            searchBar.classList.add('show');
+            overlay.style.display = "block";
+            body.classList.add('menu-open');
+            aggiornaSticky();
+            setTimeout(() => document.getElementById('search-input').focus(), 100);
+        }
+    });
+});
 
-    // Se il menu è chiuso, decidiamo in base allo scroll
-    if (window.scrollY > 60) {
-        stickyHeader.style.display = 'flex';
-    } else {
-        stickyHeader.style.display = 'none';
-    }
+searchBar.addEventListener('click', (e) => {
+    e.stopPropagation();
+});
+
+
+
+if (loginBtn) {
+    loginBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const isOpen = accountMenu.classList.contains('open');
+
+        if (isOpen) {
+            chiudiTutto();
+        } else {
+            
+            chiudiTutto();
+
+            accountMenu.classList.add('open');
+            overlay.style.display = "block";
+            body.classList.add('menu-open');
+            aggiornaSticky();
+        }
+    });
 }
 
-window.addEventListener('scroll', aggiornaSticky);
 
-/*==================================
-             NEW PHOTOS
-===================================*/
+
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Usiamo l'ID specifico
+    
     const btn = document.getElementById('load-more-photos');
     const targetList = document.querySelector('.media-more');
 
-    if(btn) { // Controllo di sicurezza: esegui solo se il tasto esiste nella pagina
+    if(btn) { 
         btn.addEventListener('click', function(e) {
             e.preventDefault();
 
-            // Mostra la griglia
+            
             targetList.classList.add('is-visible');
 
-            // Nasconde tutto il contenitore del tasto (linea e triangolo inclusi)
+            
             this.closest('.show-more-wrapper').style.display = 'none';
         });
     }
 });
 
-/*==================================
-             SLIDESHOW
-===================================*/
 
 document.addEventListener('DOMContentLoaded', function() {
     const track = document.querySelector('.events-track');
@@ -114,8 +166,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextBtn = document.querySelector('.next-btn');
 
     if (track && prevBtn && nextBtn) {
-        // Calcoliamo quanto scorrere: la larghezza di una card + il gap
-        // Usiamo una funzione per ricalcolarlo se la finestra viene ridimensionata
+        
+        
         const getScrollAmount = () => {
             const card = track.querySelector('.event-card');
             const style = window.getComputedStyle(track);
@@ -123,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return card ? card.offsetWidth + gap : 200;
         };
 
-        // Bottone Avanti
+        
         nextBtn.addEventListener('click', () => {
             track.scrollBy({
                 left: getScrollAmount(),
@@ -131,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-        // Bottone Indietro
+        
         prevBtn.addEventListener('click', () => {
             track.scrollBy({
                 left: -getScrollAmount(),
@@ -139,20 +191,21 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-        // Opzionale: Nascondere le frecce se non c'è più nulla da scorrere
+        
         track.addEventListener('scroll', () => {
             const maxScrollLeft = track.scrollWidth - track.clientWidth;
 
-            // Nascondi "indietro" se siamo all'inizio
-            prevBtn.style.opacity = track.scrollLeft <= 0 ? "0.3" : "1";
+            
+            prevBtn.style.opacity = track.scrollLeft <= 0 ? "0.7" : "1";
             prevBtn.style.pointerEvents = track.scrollLeft <= 0 ? "none" : "auto";
 
-            // Nascondi "avanti" se siamo alla fine
-            nextBtn.style.opacity = track.scrollLeft >= maxScrollLeft - 1 ? "0.3" : "1";
+            
+            nextBtn.style.opacity = track.scrollLeft >= maxScrollLeft - 1 ? "0.7" : "1";
             nextBtn.style.pointerEvents = track.scrollLeft >= maxScrollLeft - 1 ? "none" : "auto";
         });
 
-        // Eseguiamo il controllo iniziale per la freccia "prev"
+        
         track.dispatchEvent(new Event('scroll'));
     }
 });
+

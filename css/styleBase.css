@@ -5,10 +5,10 @@ body {
   background-color: #ffffff;
 }
 
+.b{
+  color: white;
+}
 
-/*==================================================
-                  HEADER DESKTOP
- ==================================================*/
 
 @media (min-width: 1041px) {
   .mobile-only {
@@ -17,7 +17,7 @@ body {
   #sticky-header {
     position: fixed;
     top: 0;
-    display: none; /* Gestito dal JS dello scroll */
+    display: none; 
   }
 }
 
@@ -28,19 +28,19 @@ body {
 }
 
 #preheader {
-  display: flex;             /* Attiva il layout flessibile */
-  justify-content: space-between; /* Spinge i due blocchi ai lati opposti */
-  align-items: center;       /* Allinea verticalmente al centro */
-  height: 64px;/* Spaziatura interna */
+  display: flex;             
+  justify-content: space-between; 
+  align-items: center;       
+  height: 64px;
   margin-left: 3%;
   margin-right: 3%;
 }
 
-/* Opzionale: pulizia interna per i gruppi */
+
 .section {
   height: 45px;
   display: flex;
-  gap: 15px; /* Spazio tra gli elementi dentro il blocco (es. tra Subscribe e Log In) */
+  gap: 15px; 
 }
 
 .section .icon-hamburger{
@@ -49,14 +49,14 @@ body {
   left: 3px;
 }
 
-/* Stile per rendere il menu "All Sections" leggibile */
+
 .menu {
   cursor: pointer;
   font-weight: 600;
   align-items: center;
 }
 
-/* Stile per i link di login/subscribe */
+
 .login a {
   text-decoration: none;
   color: #ffffff;
@@ -73,22 +73,22 @@ body {
 }
 
 .search button {
-  background: none;        /* Rimuove lo sfondo grigio */
-  border: none;            /* Rimuove il bordo */
-  padding: 0;              /* Rimuove il padding interno */
-  cursor: pointer;         /* Trasforma il cursore in una manina */
-  display: flex;           /* Aiuta ad allineare l'immagine dentro */
+  background: none;        
+  border: none;            
+  padding: 0;              
+  cursor: pointer;         
+  display: flex;           
   align-items: center;
   justify-content: center;
-  outline: none;           /* Rimuove il bordo blu di selezione del browser */
+  outline: none;           
 }
 
 #middleheader {
   position: relative;
   display: flex;
-  flex-direction: column;   /* Cambia l'asse da riga a colonna */
-  align-items: center;      /* Centra gli elementi orizzontalmente */
-  justify-content: center;  /* Centra gli elementi verticalmente (opzionale) */
+  flex-direction: column;   
+  align-items: center;      
+  justify-content: center;  
   height: 80px;
   margin-left: 3%;
   margin-right: 3%;
@@ -136,7 +136,7 @@ nav {
   height: 48px;
   border-bottom: 1px solid #b5b5b5;
   display: flex;
-  justify-content: center; /* Allinea orizzontalmente i link nel contenitore nav */
+  justify-content: center; 
   background: #ffffff;
 }
 
@@ -159,7 +159,7 @@ nav a {
   font-weight: 400;
   height: 34px;
   display: flex;
-  justify-content: center; /* Allinea orizzontalmente i link nel contenitore nav */
+  justify-content: center; 
   background: #ffffff;
   margin-left: 1%;
 }
@@ -190,14 +190,14 @@ nav a {
   min-width: 130px;
 }
 
-/* Breakpoint 1: sotto i 1000px, nascondi l'ultimo */
+
 @media (max-width: 1350px) {
   .entry-title:last-child {
     display: none;
   }
 }
 
-/* Breakpoint 2: sotto gli 850px, nascondi anche il penultimo */
+
 @media (max-width: 1140px) {
   .entry-title:nth-last-child(2) {
     display: none;
@@ -211,33 +211,33 @@ nav a {
   top: 0;
   width: 100%;
   background: #ffffff;
-  display: none;             /* Attiva il layout flessibile */
-  align-items: center;       /* Allinea verticalmente al centro */
+  display: none;             
+  align-items: center;       
   justify-content: center;
-  height: 64px;/* Spaziatura interna */
+  height: 64px;
   border-bottom: 1px solid #9c9c9c;
   box-shadow: 0 4px 2px -2px rgba(0,0,0,0.25);
 }
 
 
-/* 2. Menu a sinistra */
+
 .header-sticky .menu {
   position: absolute;
-  left: 3%; /* Distanza fissa dal bordo sinistro */
+  left: 3%; 
 }
 
-/* 3. Log/Login a destra */
+
 .header-sticky .log {
   position: absolute;
-  right: 3%; /* Distanza fissa dal bordo destro */
+  right: 3%; 
 }
 
-/* Classe aggiunta da JS quando scorri */
+
 .header-sticky.is-sticky {
   display: flex;
 }
 
-/* Nasconde l'header completo quando lo sticky è attivo */
+
 .header-hidden {
   opacity:0;
   visibility: hidden;
@@ -249,19 +249,17 @@ nav a {
 }
 
 
-/*==================================================
-                SIDEBAR
- ==================================================*/
+
 
 .wrapper.pushnav-left {
   font-size: 15px;
   position: fixed;
   top: 65px;
-  left: -300px; /* Cambia in left: -300px; e usa una classe .open per animarlo */
+  left: -300px; 
   width: 300px;
   height: 100%;
   background-color: #ffffff;
-  z-index: 10001;
+  z-index: 10002;
   overflow-y: auto;
   box-shadow: 2px 0 10px rgba(0,0,0,0.1);
   font-family: "Noto Sans", sans-serif;
@@ -304,9 +302,9 @@ nav a {
   padding: 10px 0;
 }
 
-/* Icona Home (usando una pseudo-classe se non hai l'immagine) */
+
 .home-link::before {
-  content: '🏠'; /* Sostituisci con la tua icona svg o font-icon */
+  content: '🏠'; 
   margin-right: 10px;
 }
 
@@ -316,7 +314,7 @@ nav a {
   margin: 0;
 }
 
-/* Stile delle voci principali */
+
 .menu > li > a {
   display: flex;
   justify-content: space-between;
@@ -329,29 +327,30 @@ nav a {
   line-height: 14.633px;
 }
 
-/* Aggiunge la freccia a destra per le voci che hanno sottomenu */
+
+
 .menu-item-has-children > a::after {
   content: '>';
   font-size: 20px;
   color: #ffffff;
 }
 
-/* Nasconde i sottomenu di default */
+
 .sub-menu {
   display: none;
   background-color: #ffffff;
 }
 
-/* Mostra il sottomenu quando la voce padre è attiva (o al passaggio del mouse se preferisci)*/
+
 .menu-item:hover .sub-menu {
   display: block;
 }
 
 .sub-menu li a {
   display: block;
-  padding: 10px 40px; /* Più rientro a sinistra per i figli */
+  padding: 10px 40px; 
   text-decoration: none;
-  color: #444;
+  color: #000000;
   font-size: 14px;
 }
 
@@ -385,16 +384,16 @@ nav a {
   align-items: center;
 }
 
-/* Overlay che copre tutto il sito */
+
 #side-menu-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Scurisce lo sfondo */
-  z-index: 10000; /* Sotto il menu (10001) ma sopra tutto il resto */
-  display: none;  /* Inizialmente nascosto */
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 10000; 
+  display: none;  
   opacity: 1;
   cursor: pointer;
 }
@@ -403,16 +402,70 @@ nav a {
   display: block;
 }
 
-/* Classe da applicare al BODY per bloccare lo scorrimento */
+
 body.menu-open {
   overflow: hidden;
   height: 100%;
 }
 
 
-/*==================================================
-                  HEADER MOBILE
- ==================================================*/
+
+
+.search-bar-container {
+  position: fixed;
+  
+  top: 65px;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  padding: 15px 0;
+  z-index: 10005; 
+  display: none;  
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid #eee;
+}
+
+
+.search-bar-container.show {
+  display: block;
+}
+
+
+.search-bar-content {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 15px;
+}
+
+.search-input-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.search-input-wrapper input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.search-submit-btn {
+  background-color: #007398;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+
 
 @media (max-width: 1040px) {
   .desktop-only {
@@ -433,7 +486,7 @@ body.menu-open {
     border-bottom: 1px solid #9c9c9c;
     box-shadow: 0 4px 2px -2px rgba(0,0,0,0.25);
   }
-  /* Spazio per non far finire il sito sotto l'header fisso */
+  
   body {
     padding-top: 64px;
   }
@@ -444,18 +497,18 @@ body.menu-open {
   width: 100%;
   height: 100%;
   align-items: center;
-  justify-content: space-between; /* Distribuisce i 3 blocchi: sinistra, centro, destra */
+  justify-content: space-between; 
   padding: 0 15px;
 }
 
-/* Struttura dei 3 blocchi */
+
 .section {
   display: flex;
   align-items: center;
-  flex: 1; /* Forza i tre blocchi ad avere la stessa base di larghezza */
+  flex: 1; 
 }
 
-/* 1. Blocco Sinistro: Burger */
+
 .section.menu {
   justify-content: flex-start;
 }
@@ -465,23 +518,23 @@ body.menu-open {
   padding: 10px 0;
 }
 
-/* 2. Blocco Centrale: Logo */
+
 .section.logo {
   justify-content: center;
-  flex: 2; /* Diamo più spazio al logo rispetto ai lati */
+  flex: 2; 
 }
 
 .section.logo img {
   height: auto;
 }
 
-/* 3. Blocco Destro: User e Search */
+
 .section.log {
   justify-content: flex-end;
-  gap: 15px; /* Spazio tra l'omino e la lente */
+  gap: 15px; 
 }
 
-/* Reset dei bottoni per renderli invisibili ma cliccabili */
+
 .section.log button {
   background: none;
   border: none;
@@ -493,7 +546,7 @@ body.menu-open {
 
 
 
-/* Aggiunta della freccetta accanto all'user (opzionale, come da foto) */
+
 .login-menu button::after {
   content: '▼';
   font-size: 8px;
@@ -502,33 +555,89 @@ body.menu-open {
 }
 
 
-/*==================================================
-                 MAIN CONTENT
- ==================================================*/
 
-/*==================================================
-                ARTICLE PART
- ==================================================*/
+.account-menu-mobile {
+  position: fixed;
+  top: 64px; 
+  right: -340px; 
+  width: 300px;
+  height: calc(100% - 60px);
+  background: #fff;
+  z-index: 10001;
+  transition: right 0.3s ease-in-out;
+  box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  display: none; 
+}
+
+
+@media (max-width: 1040px) {
+  .account-menu-mobile {
+    display: block;
+  }
+}
+
+.account-menu-mobile.open {
+  right: 0; 
+}
+
+
+.account-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.btn-subscribe, .btn-login, .btn-signup {
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-subscribe, .btn-login, .btn-signup {
+  background-color: #007398;
+  color: white;
+}
+
+.menu-divider {
+  margin: 30px 0;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+.account-newsletter p {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+
+
+
 
 
 
 
 .main-content {
-  max-width: 1300px; /* Corrisponde a 81.25em */
+  max-width: 1300px; 
   margin-left: auto;
   margin-right: auto;
 
-  /* 2. Spaziatura Interna */
-  /* Nello screenshot vediamo 10px a destra e sinistra */
+  
+  
   padding-left: 10px;
   padding-right: 10px;
 
-  /* 3. Margini Verticali */
-  /* Lo screenshot mostra margin-top: 0 e un leggero margin-bottom */
+  
+  
   margin-top: 16px;
   margin-bottom: 80px;
 
-  /* 4. Fondamentale per il calcolo corretto delle larghezze */
+  
   box-sizing: border-box;
 
 }
@@ -538,13 +647,13 @@ body.menu-open {
   align-items: center;
   justify-content: center;
 
-  /* 1. Altezza MASSIMA consentita */
+  
   max-height: 60px;
 
-  /* 2. Altezza "desiderata" fluida */
+  
   height: 6vw;
 
-  /* 3. Limite minimo per non far sparire il testo */
+  
   min-height: 24px;
 
 
@@ -556,7 +665,7 @@ body.menu-open {
 
 }
 
-/* Gestione visibilità */
+
 @media (min-width: 1041px) {
   .marketing-bar.mobile-only {
     display: none !important;
@@ -575,15 +684,14 @@ body.menu-open {
   justify-content: center;
 }
 
-/* --- STILE MOBILE (Sotto i 1040px) --- */
+
 @media (max-width: 1040px) {
 
   .marketing-bar.mobile-only {
-    display: block; /* O flex se vuoi centrare meglio il testo */
+    display: block; 
   }
 
-  /* Togliamo il padding-top dal body se lo avevamo messo,
-     perché ora ci pensa il margin-top della banda blu a distanziare */
+  
   body {
     padding-top: 64px;
   }
@@ -591,15 +699,15 @@ body.menu-open {
 
 
   #ad-top {
-    /* 1. Occupa tutto lo spazio fino ai margini */
+    
     max-width: 100%;
-    width: 100vw; /* Forza la larghezza dell'intera viewport */
+    width: 100vw; 
 
-    /* 2. Altezza diventa 90px */
+    
     min-height: 90px;
     height: 90px;
 
-    /* 3. Reset dei margini per farlo aderire ai bordi */
+    
     margin-left: 0;
     margin-right: 0;
     margin-bottom: 0;
@@ -607,46 +715,46 @@ body.menu-open {
 
 }
 
-/* 1. Il contenitore esterno (News + Sidebar AD) */
+
 .feature-primary.busy {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
   width: 100%;
   margin-top: 2em;
-  gap: 20px; /* Spazio tra il blocco news e l'Ad a destra */
+  gap: 20px; 
   margin-bottom: 32px;
 }
 
-/* 2. Il blocco notizie (Sinistra + Centro) */
+
 .feature-wrapper {
   display: flex;
-  flex: 1; /* Prende tutto lo spazio che la Sidebar AD gli lascia */
+  flex: 1; 
   justify-content: space-between;
   gap: 20px;
   font-size: 14px;
 }
 
-/* 3. Colonna Notizie principali (Griglia e Story) */
+
 .feature-left {
-  flex: 0 0 70%; /* Fissiamo la proporzione al 70% del wrapper */
+  flex: 0 0 70%; 
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
 
-/* 4. Colonna Latest Headlines (Centro-Destra) */
+
 .headline-list {
-  flex: 0 0 24%; /* Fissiamo la proporzione al 26% del wrapper */
+  flex: 0 0 24%; 
   padding-left: 20px;
   font-size: 15px;
 }
 
 
 
-/* --- DETTAGLI DEGLI ARTICOLI --- */
 
-/* Articolo Top (Titolo a sinistra, Foto a destra) */
+
+
 .main-story {
   display: flex;
   justify-content: space-between;
@@ -659,11 +767,11 @@ body.menu-open {
 .story-image { flex: 1; max-width: 400px }
 .story-image img { width: 100%; height: auto; object-fit: cover; }
 
-/* Griglia 2x2 */
+
 .secondary-stories {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Due colonne uguali */
-  gap: 30px 20px; /* 30px verticale, 20px orizzontale */
+  grid-template-columns: 1fr 1fr; 
+  gap: 30px 20px; 
 }
 
 .small-story img {
@@ -678,14 +786,14 @@ body.menu-open {
 }
 
 .headline-list h3 {
-  font-family: Arial, sans-serif; /* Titolo sezione solitamente sans-serif */
+  font-family: Arial, sans-serif; 
   font-size: 20px;
   font-weight: 400;
   text-transform: uppercase;
   color: #333;
   margin-bottom: 5px;
   padding-bottom: 5px;
-  border-bottom: 2px solid #007398; /* La linea blu sotto il titolo principale */
+  border-bottom: 2px solid #007398; 
   display: block;
 }
 
@@ -697,7 +805,7 @@ body.menu-open {
 
 .headline-list ul li {
   padding: 15px 0;
-  border-bottom: 1px solid #e0e0e0; /* Linea grigia sottile tra le notizie */
+  border-bottom: 1px solid #e0e0e0; 
   font-weight: bold;
 }
 
@@ -707,7 +815,7 @@ body.menu-open {
 }
 
 
-/* Stilizzazione Newsletter Box */
+
 .newsletter-box {
   background-color: #f9f9f9;
   padding: 15px;
@@ -726,52 +834,52 @@ body.menu-open {
   width: 100px;
 }
 
-/* Applichiamo lo stile a tutti i link dentro la sezione delle notizie */
+
 .feature-primary a {
   font-family: Noto serif;
-  color: #000000; /* Nero puro (o usa #333 per un nero più morbido) */
-  text-decoration: underline; /* Mantiene la sottolineatura di default */
-  transition: color 0.2s ease; /* Rende il cambio di colore fluido e piacevole */
+  color: #000000; 
+  text-decoration: underline; 
+  transition: color 0.2s ease; 
 }
 
-/* Stato Hover: quando il mouse passa sopra il link */
+
 .feature-primary .story-link:hover {
-  color: #007398; /* Il blu Mercury News */
+  color: #007398; 
 }
 
-/* 5. Sidebar AD (Estrema Destra) */
+
 .sidebar-ad-container {
-  flex: 0 0 300px; /* La pubblicità ha quasi sempre una larghezza fissa */
+  flex: 0 0 300px; 
   display: flex;
   justify-content: stretch;
 }
 
 #side-ad {
   width: 100%;
-  height: 100%;/* Occupa tutta la larghezza assegnata (es. 300px) */
-  flex-grow: 1;      /* IMPORTANTE: dice al div di "crescere" e riempire l'altezza */
+  height: 100%;
+  flex-grow: 1;      
   background-color: #f0f0f0;
   display: flex;
-  justify-content: center; /* Centra l'eventuale contenuto orizzontalmente */
-  align-items: flex-start; /* Mette l'eventuale icona ad in alto */
-  padding-top: 20px;       /* Distanza opzionale dall'alto */
+  justify-content: center; 
+  align-items: flex-start; 
+  padding-top: 20px;       
 }
 
 .bottom-leaderboard-ad {
   width: 100%;
   height: 250px;
-  background-color: #f0f0f0; /* Grigio chiaro come placeholder */
+  background-color: #f0f0f0; 
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 40px 0; /* Spazio sopra e sotto la pubblicità */
+  margin: 40px 0; 
   overflow: hidden;
 }
 
 .ad-placeholder {
   font-family: Arial, sans-serif;
-  font-size: 10px;
-  color: #999;
+  font-size: 12px;
+  color: #666;
 }
 
 .recommended-section {
@@ -782,10 +890,10 @@ body.menu-open {
 }
 
 .recommended-container {
-  flex: 1; /* Prende lo spazio a sinistra */
+  flex: 1; 
 }
 
-/* Titolo con la linea blu come i precedenti */
+
 .section-title {
   font-family: Arial, sans-serif;
   font-size: 20px;
@@ -797,12 +905,12 @@ body.menu-open {
   margin-bottom: 20px;
 }
 
-/* Lista a due colonne */
+
 .recommended-list {
   column-count: 2;
   column-gap: 40px;
   list-style: none;
-  counter-reset: recommended-counter; /* Per i numeri blu personalizzati */
+  counter-reset: recommended-counter; 
   padding-left: 0;
 }
 
@@ -814,7 +922,7 @@ body.menu-open {
   counter-increment: recommended-counter;
 }
 
-/* Numeri blu circolari */
+
 .recommended-list li::before {
   content: counter(recommended-counter);
   background-color: #007398;
@@ -841,9 +949,9 @@ body.menu-open {
   line-height: 1.3;
 }
 
-/* Sidebar AD a destra */
+
 .recommended-ad-sidebar {
-  flex: 0 0 300px; /* Larghezza fissa sidebar */
+  flex: 0 0 300px; 
   display: flex;
   justify-content: center;
 }
@@ -854,28 +962,26 @@ body.menu-open {
   background-color: #f0f0f0;
 }
 
-/*================================
-         MULTI-CATEGORY BLOCK
-================================*/
+
 
 .multi-category-block {
   display: flex;
-  flex-wrap: wrap; /* Fondamentale per far scendere le colonne */
+  flex-wrap: wrap; 
   gap: 5px;
   align-items: stretch;
   width: 100%;
 }
 
 .category-column {
-  flex: 1; /* Le colonne cercano di dividersi lo spazio equamente */
+  flex: 1; 
 }
 
-/* La quarta colonna deve mantenere lo spazio della sidebar (circa 300px) */
+
 .empty-sidebar {
   flex: 0 0 300px;
 }
 
-/* Stili interni per coerenza visiva */
+
 .cat-title {
   border-bottom: 2px solid #007398;
   padding-bottom: 5px;
@@ -904,7 +1010,7 @@ body.menu-open {
   margin-bottom: 10px;
 }
 
-.cat-main h4 a {
+.cat-main h3 a {
   font-size: 18px;
   font-weight: 600;
   color: #000;
@@ -923,12 +1029,12 @@ body.menu-open {
   list-style: none;
   padding: 0;
   margin: 0;
-  border-top: 1px solid #ddd; /* Prima linea di separazione */
+  border-top: 1px solid #ddd; 
 }
 
 .cat-links li {
   padding: 10px 0;
-  border-bottom: 1px solid #ddd; /* Linee tra le notizie */
+  border-bottom: 1px solid #ddd; 
 }
 
 .cat-links li a {
@@ -940,11 +1046,11 @@ body.menu-open {
   display: block;
 }
 
-/* Layout Desktop (Default) */
+
 .mid-page-ad {
   width: 100%;
-  height: 250px; /* Altezza iniziale */
-  background-color: #f0f0f0; /* Grigio placeholder */
+  height: 250px; 
+  background-color: #f0f0f0; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -953,9 +1059,7 @@ body.menu-open {
 }
 
 
-/*================================
-         PHOTOS BLOCK
-================================*/
+
 
 
 .photos-module {
@@ -984,7 +1088,7 @@ body.menu-open {
 
 .photo-main h4 a {
   font-family: 'Noto Serif', serif;
-  font-size: 24px; /* Più grande degli altri */
+  font-size: 24px; 
   font-weight: 900;
   color: #000;
   text-decoration: underline;
@@ -993,7 +1097,7 @@ body.menu-open {
 
 .photo-main p {
   font-size: 13px;
-  color: #666; /* Grigio leggermente più chiaro per il sommario */
+  color: #666; 
   line-height: 1.4;
 }
 
@@ -1004,7 +1108,7 @@ body.menu-open {
   gap: 15px;
 }
 
-/* Stile miniature orizzontali in desktop */
+
 .thumb-item {
   display: flex;
   gap: 10px;
@@ -1030,10 +1134,14 @@ body.menu-open {
   color: #007398 !important;
 }
 
-.show-more-btn:hover {
-  color: #004b63; /* Un blu più scuro */
-  text-decoration: underline;
-  cursor: pointer;
+.show-more-wrapper{
+  text-align: center;
+}
+
+.show-more-btn a {
+  color: #007398;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .media-more {
@@ -1041,13 +1149,13 @@ body.menu-open {
   list-style: none;
   padding: 0;
   margin: 20px 0 0 0;
-  /* 4 colonne di default per desktop */
+  
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 
 .media-more.is-visible {
-  display: grid; /* Torna a essere una griglia quando clicchi */
+  display: grid; 
 }
 
 .media-item a {
@@ -1059,7 +1167,7 @@ body.menu-open {
 .media-item img {
   width: 100%;
   height: auto;
-  aspect-ratio: 3 / 2; /* Mantiene le foto uniformi */
+  aspect-ratio: 3 / 2; 
   object-fit: cover;
   margin-bottom: 8px;
   display: block;
@@ -1074,25 +1182,23 @@ body.menu-open {
   transition: color 0.2s ease;
 }
 
-/* Effetto Hover: il testo diventa blu */
+
 .media-item a:hover .media-title {
   color: #007398;
 }
 
 .sidebar-ad-container {
-  flex: 0 0 300px; /* Mantiene la larghezza fissa di 300px */
-  background-color: #f0f0f0; /* Un grigio chiaro neutro */
+  flex: 0 0 300px; 
+  background-color: #f0f0f0; 
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 250px;       /* Altezza minima tipica di un box AD */
+  min-height: 250px;       
   position: relative;
 }
 
 
-/*================================
-         CALENDAR
-================================*/
+
 
 .upcoming-events {
   display: flex;
@@ -1104,24 +1210,24 @@ body.menu-open {
 
 .events-header {
   display: flex;
-  justify-content: space-between; /* Spinge il titolo a sinistra e i link a destra */
-  align-items: baseline;        /* Allinea le basi del testo per un look professionale */
+  justify-content: space-between; 
+  align-items: baseline;        
   padding-bottom: 10px;
   margin-bottom: 15px;
-  border-bottom: 1px solid #eee; /* Linea sottile di separazione */
+  border-bottom: 1px solid #eee; 
 }
 
 .events-header h2 {
   font-family: 'Arial', sans-serif;
   font-size: 20px;
-  font-weight: 400; /* Non troppo grassetto, come da screen */
+  font-weight: 400; 
   color: #333;
   margin: 0;
 }
 
 .events-actions {
   display: flex;
-  gap: 20px; /* Spazio tra i due link */
+  gap: 20px; 
 }
 
 .events-actions a {
@@ -1130,14 +1236,13 @@ body.menu-open {
   color: #333;
   display: flex;
   align-items: center;
-  gap: 5px; /* Spazio tra icona e testo */
+  gap: 5px; 
   transition: color 0.2s;
 }
 
-/* Slideshow */
 
 .events-slider-wrapper {
-  position: relative; /* Necessario per ancorare le frecce */
+  position: relative; 
   width: 100%;
   display: flex;
   align-items: center;
@@ -1146,12 +1251,12 @@ body.menu-open {
 .events-track {
   display: flex;
   gap: 15px;
-  overflow: hidden; /* Fondamentale per lo slider */
+  overflow: hidden; 
   width: 100%;
 }
 
 .event-card {
-  flex: 0 0 calc(16.66% - 13px); /* 6 card visibili su desktop */
+  flex: 0 0 calc(16.66% - 13px); 
   min-width: 140px;
 }
 
@@ -1160,7 +1265,7 @@ body.menu-open {
   color: white;
 }
 
-.event-card h4{
+.event-card h1{
   font-size: 14px;
   margin: 0;
 }
@@ -1182,15 +1287,16 @@ body.menu-open {
   object-fit: cover;
 }
 
-/* Stile comune per i bottoni/frecce */
+
 .prev-btn, .next-btn {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%); /* Centra perfettamente la freccia in verticale */
+  transform: translateY(-50%);
   z-index: 10;
   border: 0;
   border-radius: 4px;
-  background-color: rgba(10, 9, 8, 0);
+  background-color: rgb(255 255 255 / 0);
+  color: #000000;
   width: 35px;
   height: 40px;
   cursor: pointer;
@@ -1198,33 +1304,32 @@ body.menu-open {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s;
 }
 
-/* Posiziona la freccia sinistra */
+
 .prev-btn {
-  left: -15px; /* La facciamo sporgere leggermente a sinistra */
+  left: -15px; 
 }
 
-/* Posiziona la freccia destra */
+
 .next-btn {
-  right: -15px; /* La facciamo sporgere leggermente a destra */
+  right: -15px; 
 }
 
 .events-track {
   display: flex;
   gap: 15px;
-  overflow-x: auto; /* Permette anche lo swipe su mobile */
+  overflow-x: auto; 
   scroll-behavior: smooth;
-  scrollbar-width: none; /* Nasconde la barra su Firefox */
-  -ms-overflow-style: none; /* Nasconde la barra su IE/Edge */
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
 }
 
 .events-track::-webkit-scrollbar {
-  display: none; /* Nasconde la barra su Chrome/Safari */
+  display: none; 
 }
 
-/* --- LA BARRA DEL CALENDARIO --- */
+
 .calendar-strip {
   display: flex;
   align-items: center;
@@ -1261,7 +1366,7 @@ body.menu-open {
    justify-content: center;
    width: 100%;
    height: 100%;
-   text-decoration: none; /* Rimuove la sottolineatura standard */
+   text-decoration: none; 
    transition: background-color 0.2s ease;
  }
 
@@ -1270,7 +1375,7 @@ body.menu-open {
   font-size: 15px;
   color: #4e4e4e;
   line-height: 1;
-  margin-bottom: 4px; /* Spazio tra TUE e 1 */
+  margin-bottom: 4px; 
 }
 
 .day-item strong {
@@ -1280,9 +1385,7 @@ body.menu-open {
   line-height: 1;
 }
 
-/*================================
-       GESTIONE DIMENSIONE
-================================*/
+
 
 @media (max-width: 1000px) {
   .mid-page-ad {
@@ -1291,7 +1394,7 @@ body.menu-open {
 }
 
 @media (max-width: 1280px) {
-  /* 1. Rendiamo il contenitore principale elastico */
+  
   .feature-primary.busy {
     display: flex;
     gap: 2%;
@@ -1299,26 +1402,26 @@ body.menu-open {
     align-items: stretch;
   }
 
-  /* 2. Sidebar AD con larghezza percentuale e limiti fissi */
+  
   .sidebar-ad-container {
-    /* Assegniamo circa il 28% dello spazio totale */
+    
     flex: 0 0 28%;
 
-    /* Impostiamo i limiti che hai richiesto */
-    max-width: 360px; /* Massimo a 1280px di schermo */
-    min-width: 200px; /* Minimo a 1040px di schermo */
+    
+    max-width: 360px; 
+    min-width: 200px; 
     display: flex;
     justify-content: center;
   }
 
-  /* 3. Il Wrapper Notizie si adatta allo spazio rimanente */
+  
   .feature-wrapper {
     flex: 0 0 70%;
     display: flex;
     gap: 20px;
   }
 
-  /* 4. Ripartizione interna del wrapper notizie */
+  
   .feature-left {
     flex: 0 0 65%;
   }
@@ -1327,21 +1430,29 @@ body.menu-open {
     flex: 0 0 32%;
   }
 
-  /* --- CAMBIO LAYOUT COLONNA SINISTRA --- */
+  
 
-  /* Articolo Principale: Titolo sopra e Immagine sotto */
+  
   .main-story {
     flex-direction: column;
     gap: 10px;
   }
 
   .main-story .story-content {
-    order: 1; /* Titolo prima */
+    display: contents;
+  }
+
+  .main-story .story-content h1 {
+    order: 1;
   }
 
   .main-story .story-image {
-    order: 2; /* Immagine dopo */
+    order: 2; 
     width: 100%;
+  }
+
+  .story-content p {
+    order: 3; 
   }
 
   .main-story .story-image img {
@@ -1349,12 +1460,12 @@ body.menu-open {
     height: auto;
   }
 
-  /* Articoli Secondari: Da Griglia a Lista Orizzontale */
+  
   .secondary-stories {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    /*margin-top: 20px;*/
+    
   }
 
   .small-story {
@@ -1362,37 +1473,37 @@ body.menu-open {
     flex-direction: row;
     gap: 15px;
     align-items: flex-start;
-    width: 100%; /* Assicura che l'articolo occupi tutta la colonna */
+    width: 100%; 
   }
 
-  /* 1. Il link della foto deve essere il 50% */
+  
   .small-story a.foto {
-    flex: 0 0 50%; /* Non cresce, non si restringe, resta al 50% */
+    flex: 0 0 50%; 
     max-width: 50%;
   }
 
-  /* Forza l'immagine a occupare tutto il suo contenitore (il 50%) */
+  
   .small-story a.foto img {
     width: 100%;
     height: auto;
     display: block;
   }
 
-  /* 2. Il link del testo deve occupare il restante spazio */
+  
   .small-story a.story-link {
-    flex: 1; /* Prende il resto dello spazio (l'altro 50% circa) */
-    text-decoration: underline; /* Come avevamo detto prima */
+    flex: 1; 
+    text-decoration: underline; 
   }
 
   .small-story h2 {
     font-size: 1.15rem;
     line-height: 1.2;
-    margin: 0; /* Rimuovi margini che potrebbero sfasare l'allineamento */
+    margin: 0; 
   }
 }
 
 @media (max-width: 1040px) {
-  /* Manteniamo le tre colonne principali */
+  
   .feature-primary.busy {
     display: flex;
     gap: 5px;
@@ -1402,17 +1513,17 @@ body.menu-open {
     max-height: 140px;
   }
 
-  /* Ripristiniamo la griglia 2x2 per le secondarie */
+  
   .secondary-stories {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
   }
 
-  /* Le small stories tornano verticali: immagine sopra, testo sotto */
+  
   .small-story {
     flex-direction: column;
-    border-bottom: 1px solid #e0e0e0; /* Linea grigia sottile tra le notizie */
+    border-bottom: 1px solid #e0e0e0; 
   }
 
   .small-story a.foto,
@@ -1435,7 +1546,7 @@ body.menu-open {
   }
 
   .category-column {
-    flex: 0 0 48%; /* Due colonne per riga */
+    flex: 0 0 48%; 
   }
 
 
@@ -1453,7 +1564,7 @@ body.menu-open {
 
   .photo-thumbs-list {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Griglia 2x2 come in foto */
+    grid-template-columns: 1fr 1fr; 
     gap: 20px;
   }
 
@@ -1464,12 +1575,12 @@ body.menu-open {
 }
 
 @media (max-width: 800px) {
-  /* Ora nascondiamo la sidebar AD */
+  
   .sidebar-ad-container {
     display: none;
   }
 
-  /* Il contenitore diventa una colonna unica per permettere il reordering */
+  
   .feature-primary.busy {
     flex-direction: column;
   }
@@ -1477,44 +1588,76 @@ body.menu-open {
   .feature-wrapper {
     display: flex;
     flex-direction: column;
-    order: 1; /* Notizie in alto */
+    order: 1; 
   }
 
   .headline-list {
-    order: 2; /* Latest Headlines in fondo */
+    order: 2; 
     border-left: none;
     padding-top: 20px;
     margin-top: 30px;
   }
 
-  /* Main Article: Layout Orizzontale (Testo 60%, Foto 40%) */
+  
   .main-story {
-    flex-direction: row;
-    gap: 20px;
-    align-items: center;
+    display: flex ;
+    flex-direction: row ;
+    align-items: flex-start ;
+    gap: 20px ;
   }
 
-  .main-story .story-content {
-    flex: 0 0 60%;
+  
+  .story-content {
+    display: flex ;
+    flex-direction: column ; 
+    flex: 2 ;
+    order: 1 ;
+    unicode-bidi: isolate;
   }
 
-  .main-story .story-image {
-    flex: 0 0 40%;
+  
+  .story-content h1 {
+    width: auto;
+    max-width: 100%;
+    display: block ;
+    flex: none ; 
+    margin: 0 ;
+    order:unset;
   }
+
+  .story-content p {
+    margin-top: 10px; 
+    
+    float: none;
+    clear: both;
+  }
+
+  
+  .story-image {
+    display: block ;
+    flex: 1 ;
+    order: 2 ;
+  }
+
+  .story-image img {
+    width: 100% ;
+    height: auto ;
+  }
+
   .secondary-stories {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Mantiene le due colonne */
+    grid-template-columns: 1fr 1fr; 
     gap: 20px;
   }
 
   .small-story {
     display: flex;
-    flex-direction: row !important; /* Forza l'allineamento orizzontale */
+    flex-direction: row ; 
     gap: 12px;
     align-items: flex-start;
   }
 
-  /* La foto occupa il 40% dello spazio della sua colonna */
+  
   .small-story a.foto {
     flex: 0 0 40%;
     max-width: 40%;
@@ -1526,13 +1669,13 @@ body.menu-open {
     display: block;
   }
 
-  /* Il testo occupa il restante 60% */
+  
   .small-story a.story-link {
-    flex: 0 0 55%; /* Leggermente meno del 60 per lasciare respiro al gap */
+    flex: 0 0 55%; 
   }
 
   .small-story h2 {
-    font-size: 1rem; /* Riduciamo un filo il font perché lo spazio è poco */
+    font-size: 1rem; 
     line-height: 1.2;
   }
 
@@ -1544,19 +1687,19 @@ body.menu-open {
     display: none;
   }
 
-  /* 2. Il contenitore principale occupa tutto lo spazio */
+  
   .recommended-section {
     padding: 0 20px;
   }
 
-  /* 3. Le due colonne della lista ora si spartiscono il 100% dello spazio (50 e 50) */
+  
   .recommended-list {
-    column-count: 2; /* Rimane a due, ma su una base più larga */
+    column-count: 2; 
     column-gap: 20px;
   }
 
   .sidebar-ad-container {
-    display: none; /* Il banner scompare */
+    display: none; 
   }
 
   .photos-content-wrapper {
@@ -1565,46 +1708,69 @@ body.menu-open {
   }
 
   .media-more {
-    /* Nello screenshot 2 si vedono 2 colonne molto grandi */
+    
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
 
   .media-title {
-    font-size: 16px; /* Testo leggermente più grande per mobile */
+    font-size: 16px; 
   }
 
 }
 
 
 @media (max-width: 640px) {
+
   .main-story {
-    flex-direction: column; /* La foto torna sotto il testo */
+    
+    flex-direction: column !important;
+    gap: 15px !important;
   }
 
-  .main-story .story-content,
-  .main-story .story-image {
-    flex: 0 0 100%;
+  .story-content {
+    
+    flex: none !important;
+    width: 100% !important;
+    order: 2 !important;
   }
 
+  .story-image {
+    order:2!important;
+    flex: none !important;
+    width: 100% !important;
+  }
+
+  .story-content h1 {
+    order:1!important;
+    font-size: 22px !important; 
+    line-height: 1.2 !important;
+    width: 100%;
+  }
+
+  .story-content p {
+    order:3!important;
+    font-size: 15px !important;
+    width: 100%;
+  }
   .secondary-stories {
-    grid-template-columns: 1fr; /* Una notizia per riga */
+    grid-template-columns: 1fr; 
   }
 
   .small-story a.foto img {
     width: 100%;
     height: auto;
-    display: block;   /* Fondamentale per allinearla al bordo */
+    display: block;   
     margin: 0;
     padding: 0;
-    object-fit: cover; /* Mantiene la foto pulita se le proporzioni variano */
+    object-fit: cover; 
   }
 
   .small-story a.foto {
-    flex: 0 0 30%;    /* Foto piccola come nei siti news mobile */
+    flex: 0 0 30%;    
     max-width: 30%;
-    display: block;   /* Rimuove ogni comportamento "testuale" del link */
-    line-height: 0;   /* Elimina lo spazio fantasma sotto l'immagine */
+    display: block;   
+    line-height: 0;   
     margin: 0;
     padding-bottom: 10px;
   }
@@ -1623,7 +1789,7 @@ body.menu-open {
   }
 
   .empty-sidebar {
-    /* Se vuoi che la colonna vuota sparisca quando non serve più a tenere il posto */
+    
     display: none;
   }
 
@@ -1632,27 +1798,25 @@ body.menu-open {
   }
 
   .sidebar-ad-container {
-    display: none; /* Il banner scompare */
+    display: none; 
   }
 
   .photo-thumbs-list {
-    grid-template-columns: 1fr; /* Una miniatura per riga su mobile */
+    grid-template-columns: 1fr; 
   }
 
 
 }
-/*================================
-            FOOTER
-================================*/
 
-/* 1. Contenitore principale */
+
+
 .site-footer {
-  background-color: #f5f5f5; /* Grigio chiarissimo tipico del Mercury News */
+  background-color: #f5f5f5; 
   padding: 40px 0;
   border-top: 1px solid #ddd;
   color: #333;
 
-  box-shadow: inset 0 4px 0 rgba(0, 0, 0, 0.05);/* Leggera ombra interna per profondità */
+  box-shadow: inset 0 4px 0 rgba(0, 0, 0, 0.05);
 }
 
 .main-footer-wrapper {
@@ -1661,18 +1825,18 @@ body.menu-open {
   padding: 0 20px;
 }
 
-/* 2. Logo in alto a sinistra */
+
 .footer-logo {
-  margin-bottom: 25px;
+  margin-bottom: 5px;
   display: flex;
 }
 
 .footer-logo img {
-  height: 35px; /* Dimensione indicativa del logo */
+  height: 70px; 
   width: auto;
 }
 
-/* 3. Gestione Liste (Menu) */
+
 .footer-menus {
   list-style: none;
   padding: 0;
@@ -1682,37 +1846,37 @@ body.menu-open {
   gap: 30px;
 }
 
-/* Rimuoviamo i pallini da tutte le liste annidate */
+
 .footer-menus ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* 4. Tipografia e Titoli (h3) */
-.footer-menus h3 {
-  font-size: 16px;
-  font-weight: 900; /* Molto marcato */
+
+.footer-menus h1 {
+  font-size: 13px;
+  font-weight: 600;
   color: #000;
   text-transform: uppercase;
-  border-top: 2px solid #333; /* La linea nera spessa sopra ogni sezione */
+  border-top: 2px solid #333; 
   padding-top: 8px;
   margin-bottom: 12px;
 }
 
-/* 5. Link del footer */
+
 .footer-menus a {
-  font-size: 16px;
+  font-size: 13px;
   color: #333;
-  line-height: 1.6; /* Più spazio tra le righe per leggibilità */
+  line-height: 1.6; 
   display: block;
 }
 
 
-/* 6. Il tasto SUBSCRIBE NOW */
+
 .btn-subscribe {
   background-color: #007398;
-  color: #fff !important; /* Forza il bianco anche sull'hover */
+  color: #fff !important; 
   text-align: center;
   padding: 12px 10px;
   font-weight: bold;
@@ -1728,45 +1892,45 @@ body.menu-open {
   text-decoration: none !important;
 }
 
-/* 7. Sottosezioni (Marketplace sotto News) */
+
 .sub-column {
   margin-bottom: 30px;
 }
 
-/* --- STEP 2: Sotto i 1040px (Foto 2) --- */
+
 @media (max-width: 1040px) {
   .footer-menus {
-    /* Passiamo a 3 colonne */
+    
     grid-template-columns: repeat(3, 1fr);
   }
 
-  /* La colonna Contact (2) e Advertise (3) devono stare sotto la 1 */
-  /* Ma per farlo con Grid, diciamo alla prima colonna di occupare 2 righe */
+  
+  
   .item-news {
     grid-row: span 2;
   }
 
-  /* Spostiamo Advertise (la 3) sotto Contact (la 2) nella stessa colonna centrale */
+  
   .item-contact { grid-column: 2; grid-row: 1; }
   .item-advertise { grid-column: 2; grid-row: 2; }
 
-  /* Subscribe (la 4) resta a destra ma si allinea alla colonna 3 */
+  
   .item-subscribe { grid-column: 3; grid-row: 1 / span 2; }
 }
 
-/* --- STEP 3: Sotto gli 800px (Foto 3) --- */
+
 @media (max-width: 800px) {
   .footer-menus {
-    /* Passiamo a 2 colonne nette */
+    
     grid-template-columns: 1fr 1fr;
   }
 
-  /* Reset posizioni per griglia a 2 */
+  
   .item-news { grid-column: 1; grid-row: 1; }
   .item-contact { grid-column: 1; grid-row: 2; }
   .item-advertise { grid-column: 1; grid-row: 3; }
 
-  /* Subscribe occupa tutta la colonna di destra */
+  
   .item-subscribe { grid-column: 2; grid-row: 1 / span 3; }
 }
 
